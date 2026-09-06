@@ -1,0 +1,139 @@
+:root {
+    --bg: black;
+    --text: whitesmoke;
+    --white-text-shadow:-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white, 0 0;
+    --black-text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0 0;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--text);
+    cursor: default;
+}
+
+a[download] {
+    cursor: url('/sitely/download.png'), copy;
+}
+
+a[target=_blank] {
+    cursor: alias;
+}
+
+#s-m-t-tooltip{
+    max-width: 300px;
+    z-index: 10;
+    margin: -25px -5px 10px 10px;
+    background: var(--bg);
+    color: var(--text);
+    padding: 5px 10px;
+    border: 1px dashed #6b6b6b;
+}
+
+
+body {
+    background-color: var(--bg);
+}
+
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 50px;
+}
+header h1 {
+    transition: .25s ease-in-out;
+}
+header h1:hover {
+    color: var(--bg);
+    text-shadow: var(--white-text-shadow);
+}
+
+nav {
+    width: 50%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+nav a {
+    padding: 5px;
+}
+nav a:hover {
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+footer {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    padding: 10px 5px;
+
+    border-top: 1px solid #1b1b1b;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    height: 95vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    overflow-y: hidden;
+}
+#loadingScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    user-select: none;
+    transition: opacity 300ms;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+#loadingScreen::after {
+    content: '';
+    animation: loadingDots 1s linear infinite;
+}
+@keyframes loadingDots {
+    0%, 100% {content: '';}
+    25% {content: '.';}
+    50% {content: '..';}
+    75% {content: '...';}
+}
