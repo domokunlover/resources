@@ -1,0 +1,137 @@
+aside {
+    border: 1px solid var(--border-color);
+    width: 25%;
+    height: 100%;
+    padding: 5px;
+
+    overflow-y: scroll;
+}
+
+* {
+    user-select: none;
+}
+
+#toggleBg {
+    margin: 5px auto;
+}
+
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    height: 30px;
+    padding-right: 5px;
+}
+
+#GraphicsLanding {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+#content {
+    width: 70%;
+    height: 100%;
+    border: 1px solid var(--border-color);
+}
+
+
+.item {
+    background-color: var(--bg);
+}
+
+.toggle {
+    background-color: var(--bg-oppsite);
+}
+
+
+.tabcontent {
+  display: none;
+}
+
+.tablinks {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+
+
+details {
+    padding: 5px 10px;
+}
+
+details details {
+    font-size: 12px;
+}
+
+details button {
+    border: none;
+    background-color: none;
+}
+details button::before {
+    content: "/";
+}
+
+details > summary {
+    cursor: pointer;
+}
+details > summary::marker {
+    content: "+ ";
+    font-size: 20px;
+    height: 20px;
+    width: 20px;
+    cursor: row-resize;
+}
+details[open] > summary::marker {
+    content: "— ";
+    cursor: row-resize;
+}
+
+
+.tabcontent .heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+    border-bottom: 1px solid var(--border-color);
+}
+.tabcontent .heading span {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+
+.blinkiestabs .content {
+    display: grid;
+    grid-template-columns: repeat(6, 150px);
+    gap: 10px 15px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left: 10px;
+    padding-top: 15px;
+}
+
+.blinkiestabs .item {
+    width: 150px;
+    height: 20px;
+}
+
+.blinkiestabs .item img {
+    display: block;
+    width: 150px;
+    height: 20px;
+}
+
+.blinkiestabs .heading h1::before {
+    content: "Blinkies > ";
+}

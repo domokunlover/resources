@@ -1,8 +1,11 @@
 :root {
     --bg: black;
+    --bg-opposite: white;
     --text: whitesmoke;
+    --text-muted: gray;
     --white-text-shadow:-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white, 0 0;
     --black-text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 0 0;
+    --border-color: #1b1b1b;
 }
 
 
@@ -13,103 +16,28 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--text);
     cursor: default;
+
+    scrollbar-width: 5px;
+    scrollbar-color: var(--border-color) transparent;
 }
 
 a[download] {
     cursor: url('/sitely/download.png'), copy;
 }
 
-a[target=_blank] {
+a[target=_blank],
+a[target=_blank] *{
     cursor: alias;
 }
 
-#s-m-t-tooltip{
-    max-width: 300px;
-    z-index: 10;
-    margin: -25px -5px 10px 10px;
-    background: var(--bg);
-    color: var(--text);
+button {
+    border: 1px solid var(--border-color);
     padding: 5px 10px;
-    border: 1px dashed #6b6b6b;
-}
-
-
-body {
     background-color: var(--bg);
-}
-
-
-header {
     text-align: center;
-    padding: 20px 0;
-    font-size: 50px;
-}
-header h1 {
-    transition: .25s ease-in-out;
-}
-header h1:hover {
-    color: var(--bg);
-    text-shadow: var(--white-text-shadow);
-}
-
-nav {
-    width: 50%;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-nav a {
-    padding: 5px;
-}
-nav a:hover {
-    text-transform: uppercase;
+    display: block;
     cursor: pointer;
 }
-
-footer {
-    width: 100%;
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-
-    padding: 10px 5px;
-
-    border-top: 1px solid #1b1b1b;
-}
-
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-
-    height: 95vh;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 body {
     overflow-y: hidden;
@@ -136,4 +64,172 @@ body {
     25% {content: '.';}
     50% {content: '..';}
     75% {content: '...';}
+}
+
+#s-m-t-tooltip{
+    max-width: 300px;
+    z-index: 10;
+    margin: -25px -5px 10px 10px;
+    background: var(--bg);
+    color: var(--text);
+    padding: 5px 10px;
+    border: 1px dashed #6b6b6b;
+}
+
+
+body {
+    background-color: var(--bg);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100%;
+
+    overflow-y: auto;
+}
+
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 50px;
+}
+header h1 {
+    transition: .25s ease-in-out;
+}
+header a {
+    text-decoration: none;
+}
+header h1:hover {
+    color: var(--bg);
+    text-shadow: var(--white-text-shadow);
+    cursor: pointer;
+}
+
+nav {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+nav a {
+    padding: 5px;
+}
+nav a:hover {
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+footer {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    padding: 10px 5px;
+    margin-top: 25px;
+
+    border-top: 1px solid #1b1b1b;
+}
+
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 75%;
+    height: 100%;
+}
+
+
+#index {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    height: 100%;
+    max-height: 400px;
+    width: 100%;
+}
+
+#update-log {
+    border: 1px solid var(--border-color);
+    padding: 5px;
+    list-style-position: inside;
+    font-size: 12px;
+    width: 25%;
+
+    height: 400px;
+    overflow-y: scroll;
+    scrollbar-width: 5px;
+    scrollbar-color: white transparent;
+}
+#update-log li {
+    margin-bottom: 10px;
+    list-style-type: '› ';
+}
+#update-log li:last-of-type {
+    margin-bottom: 0;
+}
+#update-log p {
+    text-align: center;
+    padding: 5px;
+    padding-top: 10px;
+}
+#update-log .added {
+    color: green;
+    list-style-type: '+ ';
+}
+#update-log .removed {
+    color: red;
+    list-style-type: '- ';
+}
+
+#chatbox {
+    border: 1px solid var(--border-color);
+}
+
+#welcomebox {
+    max-width: 400px;
+    max-height: 400px;
+    text-align: left;
+}
+#welcomebox img {
+    height: 100%;
+}
+
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 10px auto;
+}
+
+p.note {
+    font-size: 12px;
+
+    border: 1px solid var(--border-color);
+    padding: 4px;
+    margin: 10px;
+    position: relative;
+}
+p.note::before {
+    content: "!  ";
+    font-size: 20px;
+    position: absolute;
+    top: 15px;
+    left: -20px;
 }

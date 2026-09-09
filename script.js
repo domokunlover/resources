@@ -69,13 +69,25 @@ attribute:"title"
 
 
 
+const headerHTML = `
+<a href="index.html">
+	<h1>Resources</h1>
+</a>
+<h3>github.io</h3>
+`
 
+const navHTML = `
+<a href="graphics.html" title="May take a while to load.">/graphics</a>
+<a href="codes.html">/codes</a>
+`
 
 const footerHTML = `
-&copy; 2026 | <a href="https://tristansgrave.neocities.org" target="_blank">Personal Site</a> | <a href="https://github.com/domokunlover/resources" target="_blank">Github Repo</a> | <a href="/resources/index.html">Go Home</a>
+&copy; 2026 | <a href="https://tristansgrave.neocities.org" target="_blank">Personal Site</a> | <a href="https://github.com/domokunlover/resources" target="_blank">Github Repo</a> | <a href="index.html">Go Home</a>
 `
 
 
+document.querySelector("header").innerHTML = headerHTML;
+document.querySelector("nav").innerHTML = navHTML;
 document.querySelector("footer").innerHTML = footerHTML;
 
 initializeSearch?.();
